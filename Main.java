@@ -1,23 +1,24 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.teste04;
 
-package com.mycompany.aula03exerblue01;
-
-
+/**
+ *
+ * @author unifglourenco
+ */
 public class Main {
     public static void main(String[] args) {
-        Data data01 = new Data(1, 9, 2026);
+        Professor prof = new Professor("Gabriela", "CC");
+        Disciplina disc = new Disciplina("OO", "CC310", prof);
+        Aluno aluno01 = new Aluno("Vinicius", "222", "CC", disc);
         
-        data01.printFormato01();
-        data01.printFormato02();
-        data01.printFormato03();
+        System.out.println(aluno01.toString());
         
-        Data data02 = new Data("Setembro", 1, 2026);
-        data02.printFormato01();
-        data02.printFormato02();
-        data02.printFormato03();
+        System.out.println(aluno01.getNome());
         
-        Data data03 = new Data(244, 2026);
-        data03.printFormato01();
-        data03.printFormato02();
-        data03.printFormato03();
+        System.out.println(aluno01.getDisciplina().getCodigo());
+        System.out.println(aluno01.getDisciplina().getProfessor().getNome());
     }
 }
