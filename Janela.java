@@ -2,7 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package aula08exe01;
+package view;
+
+import controller.Controle;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -15,7 +20,74 @@ public class Janela extends javax.swing.JFrame {
      */
     public Janela() {
         initComponents();
+        c = new Controle(this);
     }
+
+    public JButton getBt_limpar() {
+        return bt_limpar;
+    }
+
+    public void setBt_limpar(JButton bt_limpar) {
+        this.bt_limpar = bt_limpar;
+    }
+
+    public JButton getBt_somar() {
+        return bt_somar;
+    }
+
+    public void setBt_somar(JButton bt_somar) {
+        this.bt_somar = bt_somar;
+    }
+
+    public JLabel getLbl_nro1() {
+        return lbl_nro1;
+    }
+
+    public void setLbl_nro1(JLabel lbl_nro1) {
+        this.lbl_nro1 = lbl_nro1;
+    }
+
+    public JLabel getLbl_nro2() {
+        return lbl_nro2;
+    }
+
+    public void setLbl_nro2(JLabel lbl_nro2) {
+        this.lbl_nro2 = lbl_nro2;
+    }
+
+    public JLabel getLbl_resultado() {
+        return lbl_resultado;
+    }
+
+    public void setLbl_resultado(JLabel lbl_resultado) {
+        this.lbl_resultado = lbl_resultado;
+    }
+
+    public JTextField getTxt_nro1() {
+        return txt_nro1;
+    }
+
+    public void setTxt_nro1(JTextField txt_nro1) {
+        this.txt_nro1 = txt_nro1;
+    }
+
+    public JTextField getTxt_nro2() {
+        return txt_nro2;
+    }
+
+    public void setTxt_nro2(JTextField txt_nro2) {
+        this.txt_nro2 = txt_nro2;
+    }
+
+    public JTextField getTxt_resultado() {
+        return txt_resultado;
+    }
+
+    public void setTxt_resultado(JTextField txt_resultado) {
+        this.txt_resultado = txt_resultado;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,39 +102,39 @@ public class Janela extends javax.swing.JFrame {
         txt_nro1 = new javax.swing.JTextField();
         lbl_nro2 = new javax.swing.JLabel();
         txt_nro2 = new javax.swing.JTextField();
-        lbl_nro3 = new javax.swing.JLabel();
+        lbl_resultado = new javax.swing.JLabel();
         txt_resultado = new javax.swing.JTextField();
         bt_limpar = new javax.swing.JButton();
         bt_somar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("APP_SOMA");
+        setTitle("APP SOMA2");
 
         lbl_nro1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lbl_nro1.setText("Numero 1:");
+        lbl_nro1.setText("Numero 1: ");
 
         txt_nro1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         lbl_nro2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lbl_nro2.setText("Numero 2:");
+        lbl_nro2.setText("Numero 2: ");
 
         txt_nro2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        lbl_nro3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lbl_nro3.setText("Resultado:");
+        lbl_resultado.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbl_resultado.setText("Resultado:");
 
         txt_resultado.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        bt_limpar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        bt_limpar.setText("Limpar");
+        bt_limpar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bt_limpar.setText("LIMPAR");
         bt_limpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_limparActionPerformed(evt);
             }
         });
 
-        bt_somar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        bt_somar.setText("Somar");
+        bt_somar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bt_somar.setText("SOMAR");
         bt_somar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_somarActionPerformed(evt);
@@ -74,48 +146,49 @@ public class Janela extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl_nro2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_nro2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbl_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbl_nro2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_nro2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbl_nro1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_nro1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl_nro1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_nro1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl_nro3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(45, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(bt_limpar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bt_somar)
-                .addGap(55, 55, 55))
+                        .addGap(67, 67, 67)
+                        .addComponent(bt_limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
+                        .addComponent(bt_somar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(75, 75, 75)
+                .addGap(83, 83, 83)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_nro1)
-                    .addComponent(txt_nro1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                    .addComponent(lbl_nro1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_nro1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_nro2)
-                    .addComponent(txt_nro2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
+                    .addComponent(lbl_nro2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_nro2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_nro3)
-                    .addComponent(txt_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                    .addComponent(lbl_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bt_limpar)
-                    .addComponent(bt_somar))
-                .addGap(86, 86, 86))
+                    .addComponent(bt_limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_somar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50))
         );
 
         pack();
@@ -123,22 +196,17 @@ public class Janela extends javax.swing.JFrame {
 
     private void bt_limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_limparActionPerformed
         // TODO add your handling code here:
-        txt_nro1.setText("");
-        txt_nro2.setText("");
-        txt_resultado.setText("");
+        c.controleLimpar();
     }//GEN-LAST:event_bt_limparActionPerformed
 
     private void bt_somarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_somarActionPerformed
         // TODO add your handling code here:
-        double n1 = Double.parseDouble(txt_nro1.getText());
-        double n2 = Double.parseDouble(txt_nro2.getText());
-        double resultado = n1 + n2;
-        txt_resultado.setText(String.valueOf(resultado));
+         c.controleSomar();
     }//GEN-LAST:event_bt_somarActionPerformed
 
     /**
      * @param args the command line arguments
-//     */
+     */
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -171,12 +239,13 @@ public class Janela extends javax.swing.JFrame {
 //        });
 //    }
 
+    private Controle c;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_limpar;
     private javax.swing.JButton bt_somar;
     private javax.swing.JLabel lbl_nro1;
     private javax.swing.JLabel lbl_nro2;
-    private javax.swing.JLabel lbl_nro3;
+    private javax.swing.JLabel lbl_resultado;
     private javax.swing.JTextField txt_nro1;
     private javax.swing.JTextField txt_nro2;
     private javax.swing.JTextField txt_resultado;
